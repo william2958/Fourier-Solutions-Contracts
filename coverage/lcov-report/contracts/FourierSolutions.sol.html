@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/FourierSolutions.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> FourierSolutions.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>51/51</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.18;
+&nbsp;
+import "./Ownable.sol";
+&nbsp;
+/**
+ * @title FourierSolutions
+ * @dev Contract for FourierSolutions payment model
+ */
+contract FourierSolutions is Ownable{
+&nbsp;
+    struct Retailer {
+        string name;
+        uint id;
+        // balance in wei
+        uint balance;
+        address retailerOwner;
+        uint numTransactions;
+    }
+&nbsp;
+    struct Transaction {
+        uint transactionId;
+        uint time;
+        uint totalCostInWei;
+        uint fourierCut;
+        uint retailerCut;
+        string costInUSD;
+    }
+&nbsp;
+    // Mapping of retailer id to retailers
+    mapping (uint =&gt; Retailer) retailerMapping;
+    // Also allows users to find the name of a retailer from the id
+    mapping (uint =&gt; string) retailerNameMapping;
+    // Mapping to find the id of a retailer from the name
+    mapping (string =&gt; uint) retailerIdMapping;
+&nbsp;
+    // Mapping of retailer id to transaction id
+    mapping (uint =&gt; mapping (uint =&gt; Transaction)) transactionMapping;
+&nbsp;
+    // Number to keep track of the # of retailers as well as set new retailer ids
+    uint public numRetailers;
+    // Mapping of retailer id to number of transactions for that retailer
+    mapping (uint =&gt; uint) numTransactions;
+&nbsp;
+    // FourierSolution's balance
+    uint fourierSolutionsBalance;
+&nbsp;
+    // EVENTS
+    event RetailerRegistered(address indexed owner, string retailerName, uint retailerId);
+    event TransactionReceived(address indexed sender, uint indexed retailerId, uint amount, uint transactionId);
+    event RetailerWithdrawal(uint indexed retailerId, uint amount);
+    event FourierWithdrawal(uint amount);
+&nbsp;
+&nbsp;
+    /**
+     * @dev Function to register a retailer with fourier solutions
+     * @param _retailerName string the name that the retailer wishes to use
+     */
+    function registerRetailer(string _retailerName) public {
+&nbsp;
+        // Some checking
+        require(bytes(_retailerName).length &gt; 0);
+        require(retailerIdMapping[_retailerName] == 0);
+&nbsp;
+        // Increment the num retailers counter to set custom id for new retailer
+        numRetailers++;
+&nbsp;
+        // Create the retailer and assign it in the mapping
+        retailerMapping[numRetailers] = Retailer({
+            name: _retailerName,
+            id: numRetailers,
+            balance: 0,
+            retailerOwner: msg.sender,
+            numTransactions: 0
+        });
+&nbsp;
+        // Set the name to id
+        retailerNameMapping[numRetailers] = _retailerName;
+        // Set the id to name
+        retailerIdMapping[_retailerName] = numRetailers;
+&nbsp;
+        // Emit the event
+        RetailerRegistered(msg.sender, _retailerName, numRetailers);
+&nbsp;
+    }
+&nbsp;
+    /**
+     * @dev Function used to create a transaction where a customer pays a retailer
+     * @param _retailerId uint id of the retailer that is being paid.
+     * @param _fourierCut uint fee that is charged by fourier
+     * @param _retailerCut uint amount that is given to the retailer
+     * @param _costInUSD string amount in USD that the transaction is charging
+     */
+    function payRetailer(uint _retailerId, uint _fourierCut, uint _retailerCut, string _costInUSD) public payable {
+&nbsp;
+        // Make sure that the payment amounts add up
+        require(msg.value &gt; 0);
+        require(msg.value == _fourierCut + _retailerCut);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_fourierCut &gt; 0 &amp;&amp; _retailerCut &gt; 0);
+&nbsp;
+        // Get a storage pointer to the retailer
+        Retailer storage retailer = retailerMapping[_retailerId];
+&nbsp;
+        // Make sure that the retailer exists
+        require(retailer.id &gt; 0);
+        // Overflow protection
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(retailer.balance + msg.value &gt; retailer.balance);
+&nbsp;
+        // Increment the number of transactions this retailer owns
+        numTransactions[_retailerId] += 1;
+        transactionMapping[_retailerId][numTransactions[_retailerId]] = Transaction({
+            transactionId: numTransactions[_retailerId],
+            time: now,
+            totalCostInWei: msg.value,
+            fourierCut: _fourierCut,
+            retailerCut: _retailerCut,
+            costInUSD: _costInUSD
+        });
+&nbsp;
+        // Add the balance to the retailer
+        retailer.balance += _retailerCut;
+        // Add the balance to fourier solutions
+        fourierSolutionsBalance += _fourierCut;
+&nbsp;
+        // Fire the event that we have received a transaction
+        TransactionReceived(msg.sender, _retailerId, msg.value, numTransactions[_retailerId]);
+&nbsp;
+    }
+&nbsp;
+    /**
+     * @dev Function for retailers to withdraw their funds from the contract
+     * @param _retailerId uint id of the retailer.
+     * @param _amount uint amount that the retailer wishes to withdraw
+     */
+    function retailerWithdraw(uint _retailerId, uint _amount) external {
+&nbsp;
+        Retailer memory retailer = retailerMapping[_retailerId];
+&nbsp;
+        // Make sure the numbers add up
+        require(_amount &gt; 0 &amp;&amp; _retailerId &gt; 0);
+        require(retailer.balance &gt;= _amount);
+        // overflow check
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(retailer.balance - _amount &lt; retailer.balance);
+        require(retailer.retailerOwner == msg.sender);
+&nbsp;
+        // Subtract the amount first
+        retailerMapping[_retailerId].balance -= _amount;
+&nbsp;
+        // If everything is good then transfer that amount over to the retailer owner
+        msg.sender.transfer(_amount);
+&nbsp;
+        // Emit the event
+        RetailerWithdrawal(_retailerId, _amount);
+&nbsp;
+    }
+&nbsp;
+    /**
+     * @dev Function for Fourier Solutions to withdraw their funds from the contract
+     * @param _amount uint amount that is to be withdrawn
+     */
+    function fourierWithdraw(uint _amount) onlyOwner external {
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_amount &gt; 0);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(fourierSolutionsBalance &gt;= _amount);
+        // overflow check
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(fourierSolutionsBalance - _amount &lt; fourierSolutionsBalance);
+&nbsp;
+        // Subtract the amount first
+        fourierSolutionsBalance -= _amount;
+&nbsp;
+        // If everything is good then transfer the amount ot fourier solutions
+        owner.transfer(_amount);
+&nbsp;
+        // Emit the event
+        FourierWithdrawal(_amount);
+&nbsp;
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+    // HELPER METHODS
+&nbsp;
+    /**
+     * @dev Function to get the retailer details from it's id
+     * @param _retailerId the id of the retailer
+     */
+    function getRetailer(uint _retailerId) public constant returns (
+        string _retailerName,
+        uint _balance,
+        address _retailerOwner,
+        uint _numTransactions
+    ) {
+&nbsp;
+        Retailer memory retailer = retailerMapping[_retailerId];
+&nbsp;
+        _retailerName = retailer.name;
+        _balance = retailer.balance;
+        _retailerOwner = retailer.retailerOwner;
+        _numTransactions = retailer.numTransactions;
+&nbsp;
+    }
+&nbsp;
+    /**
+     * @dev Function to get the retailer details from it's id
+     * @param _retailerName the name of the retailer
+     */
+    function getRetailerByName(string _retailerName) public constant returns (
+        uint _retailerId,
+        uint _balance,
+        address _retailerOwner,
+        uint _numTransactions
+    ) {
+&nbsp;
+        Retailer memory retailer = retailerMapping[retailerIdMapping[_retailerName]];
+&nbsp;
+        _retailerId = retailer.id;
+        _balance = retailer.balance;
+        _retailerOwner = retailer.retailerOwner;
+        _numTransactions = retailer.numTransactions;
+&nbsp;
+    }
+&nbsp;
+    /**
+     * @dev Function to get the retailer's current balance
+     * @param _retailerId the id of the retailer
+     */
+    function getRetailerBalance(uint _retailerId) public constant returns (uint _balance) {
+        return retailerMapping[_retailerId].balance;
+    }
+&nbsp;
+    /**
+     * @dev Function to get FourierSolution's balance. Only callable by fourier solutions
+     */
+    function getFourierBalance() onlyOwner public constant returns (uint _balance) {
+        return fourierSolutionsBalance;
+    }
+&nbsp;
+    /**
+     * @dev Function to get the total number of transactions a retailer has incurred
+     * @param _retailerId the id of the retailer
+     */
+    function getNumTransactions(uint _retailerId) public constant returns (uint _numTransactions) {
+        return numTransactions[_retailerId];
+    }
+&nbsp;
+    /**
+     * @dev Used to get a certain transaction for a retailer. This can be used with the getNumTransactions
+     *      method to fetch a list of most current transactions.
+     * @param _retailerId uint the id of the retailer that needs to be searched up
+     * @param _transactionId uint the specific id of the transaction you are looking for
+     */
+    function getTransaction(uint _retailerId, uint _transactionId) public constant returns (
+        uint _time,
+        uint _costInWei,
+        uint _fourierCut,
+        uint _retailerCut,
+        string _costInUSD
+    ) {
+&nbsp;
+        Transaction memory transaction = transactionMapping[_retailerId][_transactionId];
+&nbsp;
+        _time = transaction.time;
+        _costInWei = transaction.totalCostInWei;
+        _fourierCut = transaction.fourierCut;
+        _retailerCut = transaction.retailerCut;
+        _costInUSD = transaction.costInUSD;
+&nbsp;
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 08 2018 20:53:46 GMT-0500 (EST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

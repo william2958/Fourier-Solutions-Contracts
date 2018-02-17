@@ -1,0 +1,15 @@
+{
+    "name": "FourierSolutions",
+    "version": "1.0.0",
+    "devDependencies": {
+        "solidity-coverage": "^0.4.8"
+    },
+    "dependencies": {
+        "ethereumjs-testrpc": "^6.0.3",
+        "truffle": "^4.0.4"
+    },
+    "scripts": {
+        "test": "truffle test",
+        "coverage": "./node_modules/.bin/solidity-coverage"
+    }
+}
